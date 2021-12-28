@@ -36,33 +36,34 @@
   </noscript>
   <button onclick="topFunction()" class="backToTop" id="backToTop" title="Go to top">^</button>
   <!-- Header content -->
+  <nav class="navbar navbar-expand-xl navbar-light sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img id="logo" src="./images/logo.svg" alt="" class="d-inline-block align-top">
+        <span class="d-inline-block" id="custom_vertical_line"></span><span class="d-inline-block align-top"
+          id="header_primary_content"> Documentation</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end lateral-left" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Demo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Support</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Blog</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
   <div class="container-fluid bold_header ">
     <div class="container">
-      <nav class="navbar navbar-expand-xl navbar-light sticky-top">
-          <a class="navbar-brand" href="#">
-            <img id="logo" src="./images/logo.svg" alt="" class="d-inline-block align-top">
-            <span class="d-inline-block" id="custom_vertical_line"></span><span class="d-inline-block align-top"
-              id="header_primary_content"> Documentation</span>
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end lateral-left" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Demo</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Support</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
-              </li>
-            </ul>
-        </div>
-      </nav>
       <div class="content_group p-xl-5">
         <div class="p-4 rounded-3">
           <h1 class="display-6 fw-bold text-center">Turn your customer into success stories with <br>the modern
@@ -88,7 +89,7 @@
   <div class="container">
     <div class="search_result_container hide">
       <div class="pt-5 d-flex" onclick="displayConxt()">
-        <p class="back_to_context">&#8592; Back</p>
+        <p class="back_to_context">&#11164; Back</p>
       </div>
       <div class="gcse-searchresults"></div>
     </div>
@@ -249,26 +250,30 @@
   <!-- Main content End-->
   <div class="container footer_content mt-5 mb-5 d-flex">
     <ul class="list-group list-group-horizontal-lg mx-auto">
-      <li class="list-group-item">Copyright 2001 – 2022 Syncfusion Inc. All Rights Reserved. &nbsp; &nbsp;<a class="brand_color" href="">Privacy Policy</a><a class="brand_color" href="">Terms of Use</a></li>
+      <li class="list-group-item">Copyright 2001 – 2022 Syncfusion Inc. All Rights Reserved. &nbsp; &nbsp;<a
+          class="brand_color" href="">Privacy Policy</a><a class="brand_color" href="">Terms of Use</a></li>
     </ul>
   </div>
   <script>
     // Menu side toggle
     $('document').ready(function () {
+      //sidebar
       $('button.navbar-toggler').click(function () {
         var navbar_obj = $($(this).data("bsTarget"));
         navbar_obj.toggleClass("open");
       });
     });
   </script>
-  <script>
-    //Get the button
+  <script type="text/javascript">
+    // General
     var mybutton = document.getElementById("backToTop");
+    var nav = document.getElementsByClassName('navbar');
+    var doc_content = document.getElementsByClassName("doc_content")[0];
+    var result_content = document.getElementsByClassName("search_result_container")[0];
 
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function () { scrollFunction() };
+    window.onscroll = function () { scrollToTopEnableFunction(); navHighlightEnableFunction(); };
 
-    function scrollFunction() {
+    function scrollToTopEnableFunction() {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         mybutton.style.display = "block";
       } else {
@@ -276,16 +281,26 @@
       }
     }
 
-    // When the user clicks on the button, scroll to the top of the document
+    function navHighlightEnableFunction() {
+      if (window.pageYOffset < 10) {
+        $(nav).css("background-color", "transparent");
+        $(nav).css("box-shadow", "none");
+      }
+      else {
+        $(nav).css("background-color", "#fff");
+        $(nav).css("box-shadow", "0 8px 11px -6px rgba(0, 0, 0, 0.12)");
+      }
+    }
+
     function topFunction() {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     }
-  </script>
-  <script>
-    var doc_content = document.getElementsByClassName("doc_content")[0];
-    var result_content = document.getElementsByClassName("search_result_container")[0];
+    // Google Programmable search content
     window.__gcse || (window.__gcse = {});
+    window.__gcse.initializationCallback = function(){
+    document.getElementById("gsc-i-id1").setAttribute('placeholder','Search');
+    };
     window.__gcse.searchCallbacks = {
       web: {
         starting: function () {
