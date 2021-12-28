@@ -13,14 +13,32 @@
   <link href="./css/bootstrap.min.css" rel="stylesheet">
   <link href="./css/style.css" rel="stylesheet">
   <title>Bold Reports Embedded and Cloud Documentation | Syncfusion</title>
+
+  <!-- Google Tag Manager -->
+  <!-- <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-K73VBT8');
+  </script> -->
+  <!-- End Google Tag Manager -->
+  <script async src="https://cse.google.com/cse.js?cx=88881f2ffacbbcb62"></script>
 </head>
 
 <body>
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K73VBT8" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <button onclick="topFunction()" class="backToTop" id="backToTop" title="Go to top">^</button>
   <!-- Header content -->
-  <div class="container-fluid bold_header">
+  <div class="container-fluid bold_header ">
     <div class="container">
-      <nav class="navbar navbar-expand-xl navbar-light">
-        <div class="container-fluid">
+      <nav class="navbar navbar-expand-xl navbar-light sticky-top">
           <a class="navbar-brand" href="#">
             <img id="logo" src="./images/logo.svg" alt="" class="d-inline-block align-top">
             <span class="d-inline-block" id="custom_vertical_line"></span><span class="d-inline-block align-top"
@@ -43,7 +61,6 @@
                 <a class="nav-link" href="#">Blog</a>
               </li>
             </ul>
-          </div>
         </div>
       </nav>
       <div class="content_group p-xl-5">
@@ -55,163 +72,175 @@
             schedule a <a href="" style="color: #ff4801;">live 30-minute demo</a> with our
             experts.</p>
         </div>
-        <div class="input-group content_search pb-5 pt-3 rounded-3 d-flex mx-auto input-group-lg">
-          <input class="form-control search_input" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-secondary search_button" type="button"><span class="mglass">&#9906;</span></button>
+        <!-- <div class="input-group content_search pb-5 pt-3 rounded-3 d-flex mx-auto input-group-lg"> -->
+        <div class="pb-3">
+          <div class="gcse-searchbox"></div>
         </div>
+        <!-- <input class="form-control search_input" type="search" placeholder="Search" aria-label="Search"> -->
+        <!-- <button class="btn btn-outline-secondary search_button" type="button"><span
+              class="mglass">&#9906;</span></button> -->
+        <!-- </div> -->
       </div>
     </div>
   </div>
   <!-- Header content End-->
   <!-- Main content-->
   <div class="container">
-    <h3 class="pt-5 pb-3">For cloud-hosting solution</h3>
-    <div class="row row-cols-1 row-cols-xl-3 g-4">
-      <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Administrator Guide</h5>
-            <p class="card-text"><a href="">Site Administration</a></p>
-            <p class="card-text"><a href="">Site Security</a></p>
-            <p class="card-text"><a href="">Rebranding/White labelling and Custom Domains</a></p>
-          </div>
-        </div>
+    <div class="search_result_container hide">
+      <div class="pt-5 d-flex" onclick="displayConxt()">
+        <p class="back_to_context">&#8592; Back</p>
       </div>
-      <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Report Creators Guide</h5>
-            <p class="card-text"><a href="">Quick Start</a></p>
-            <p class="card-text"><a href="">Working with Data Source</a></p>
-            <p class="card-text"><a href="">Visualizing Data</a></p>
-            <p class="card-text"><a href="">Migration Utility</a></p>
-            <p class="card-text"><a href="">Responsive Visualizations</a></p>
-            <p class="card-text"><a href="">Creator Utility</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Report User Guide</h5>
-            <p class="card-text"><a href="">Working with Dashboards</a></p>
-            <p class="card-text"><a href="">Managing Resources</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Mobile App User Guide</h5>
-            <p class="card-text"><a href="">Accessing through Mobile App</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Developer Guide</h5>
-            <p class="card-text"><a href="">REST API Reference</a></p>
-          </div>
-        </div>
-      </div>
+      <div class="gcse-searchresults"></div>
     </div>
-    <h3 class="pt-5 pb-3">For Embedded-hosting solution</h3>
-    <div class="row row-cols-1 row-cols-xl-3 g-4">
-      <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Administrator Guide</h5>
-            <p class="card-text"><a href="">Site Administration</a></p>
-            <p class="card-text"><a href="">Site Security</a></p>
-            <p class="card-text"><a href="">Rebranding/White labelling and Custom Domains</a></p>
+    <div class="doc_content">
+      <h3 class="pt-5 pb-3">For cloud-hosting solution</h3>
+      <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 g-4">
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Administrator Guide</h5>
+              <p class="card-text"><a href="">Site Administration</a></p>
+              <p class="card-text"><a href="">Site Security</a></p>
+              <p class="card-text"><a href="">Rebranding/White labelling and Custom Domains</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Report Creators Guide</h5>
+              <p class="card-text"><a href="">Quick Start</a></p>
+              <p class="card-text"><a href="">Working with Data Source</a></p>
+              <p class="card-text"><a href="">Visualizing Data</a></p>
+              <p class="card-text"><a href="">Migration Utility</a></p>
+              <p class="card-text"><a href="">Responsive Visualizations</a></p>
+              <p class="card-text"><a href="">Creator Utility</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Report User Guide</h5>
+              <p class="card-text"><a href="">Working with Dashboards</a></p>
+              <p class="card-text"><a href="">Managing Resources</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Mobile App User Guide</h5>
+              <p class="card-text"><a href="">Accessing through Mobile App</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Developer Guide</h5>
+              <p class="card-text"><a href="">REST API Reference</a></p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Report Creators Guide</h5>
-            <p class="card-text"><a href="">Quick Start</a></p>
-            <p class="card-text"><a href="">Working with Data Source</a></p>
-            <p class="card-text"><a href="">Visualizing Data</a></p>
-            <p class="card-text"><a href="">Migration Utility</a></p>
-            <p class="card-text"><a href="">Responsive Visualizations</a></p>
+      <h3 class="pt-5 pb-3">For Embedded-hosting solution</h3>
+      <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 g-4">
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Administrator Guide</h5>
+              <p class="card-text"><a href="">Site Administration</a></p>
+              <p class="card-text"><a href="">Site Security</a></p>
+              <p class="card-text"><a href="">Rebranding/White labelling and Custom Domains</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Report Creators Guide</h5>
+              <p class="card-text"><a href="">Quick Start</a></p>
+              <p class="card-text"><a href="">Working with Data Source</a></p>
+              <p class="card-text"><a href="">Visualizing Data</a></p>
+              <p class="card-text"><a href="">Migration Utility</a></p>
+              <p class="card-text"><a href="">Responsive Visualizations</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Report User Guide</h5>
+              <p class="card-text"><a href="">Working with Dashboards</a></p>
+              <p class="card-text"><a href="">Managing Resources</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Mobile App User Guide</h5>
+              <p class="card-text"><a href="">Accessing through Mobile App</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Developer Guide</h5>
+              <p class="card-text"><a href="">REST API Reference</a></p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Report User Guide</h5>
-            <p class="card-text"><a href="">Working with Dashboards</a></p>
-            <p class="card-text"><a href="">Managing Resources</a></p>
+      <h3 class="pt-5 pb-3">For Enterprise-hosting solution</h3>
+      <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 g-4">
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Administrator Guide</h5>
+              <p class="card-text"><a href="">Site Administration</a></p>
+              <p class="card-text"><a href="">Site Security</a></p>
+              <p class="card-text"><a href="">Rebranding/White labelling and Custom Domains</a></p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Mobile App User Guide</h5>
-            <p class="card-text"><a href="">Accessing through Mobile App</a></p>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Report Creators Guide</h5>
+              <p class="card-text"><a href="">Quick Start</a></p>
+              <p class="card-text"><a href="">Working with Data Source</a></p>
+              <p class="card-text"><a href="">Visualizing Data</a></p>
+              <p class="card-text"><a href="">Migration Utility</a></p>
+              <p class="card-text"><a href="">Responsive Visualizations</a></p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Developer Guide</h5>
-            <p class="card-text"><a href="">REST API Reference</a></p>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Report User Guide</h5>
+              <p class="card-text"><a href="">Working with Dashboards</a></p>
+              <p class="card-text"><a href="">Managing Resources</a></p>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <h3 class="pt-5 pb-3">For Enterprise-hosting solution</h3>
-    <div class="row row-cols-1 row-cols-xl-3 g-4">
-      <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Administrator Guide</h5>
-            <p class="card-text"><a href="">Site Administration</a></p>
-            <p class="card-text"><a href="">Site Security</a></p>
-            <p class="card-text"><a href="">Rebranding/White labelling and Custom Domains</a></p>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Mobile App User Guide</h5>
+              <p class="card-text"><a href="">Accessing through Mobile App</a></p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Report Creators Guide</h5>
-            <p class="card-text"><a href="">Quick Start</a></p>
-            <p class="card-text"><a href="">Working with Data Source</a></p>
-            <p class="card-text"><a href="">Visualizing Data</a></p>
-            <p class="card-text"><a href="">Migration Utility</a></p>
-            <p class="card-text"><a href="">Responsive Visualizations</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Report User Guide</h5>
-            <p class="card-text"><a href="">Working with Dashboards</a></p>
-            <p class="card-text"><a href="">Managing Resources</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Mobile App User Guide</h5>
-            <p class="card-text"><a href="">Accessing through Mobile App</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Developer Guide</h5>
-            <p class="card-text"><a href="">REST API Reference</a></p>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Developer Guide</h5>
+              <p class="card-text"><a href="">REST API Reference</a></p>
+            </div>
           </div>
         </div>
       </div>
@@ -219,10 +248,8 @@
   </div>
   <!-- Main content End-->
   <div class="container footer_content mt-5 mb-5 d-flex">
-    <ul class="list-group list-group-horizontal-xl mx-auto">
-      <li class="list-group-item">Copyright 2001 – 2022 Syncfusion Inc. All Rights Reserved.</li>
-      <li class="list-group-item"><a class="brand_color" href="">Privacy Policy</a></li>
-      <li class="list-group-item"><a class="brand_color" href="">Terms of Use</a></li>
+    <ul class="list-group list-group-horizontal-lg mx-auto">
+      <li class="list-group-item">Copyright 2001 – 2022 Syncfusion Inc. All Rights Reserved. &nbsp; &nbsp;<a class="brand_color" href="">Privacy Policy</a><a class="brand_color" href="">Terms of Use</a></li>
     </ul>
   </div>
   <script>
@@ -233,5 +260,47 @@
         navbar_obj.toggleClass("open");
       });
     });
+  </script>
+  <script>
+    //Get the button
+    var mybutton = document.getElementById("backToTop");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+  <script>
+    var doc_content = document.getElementsByClassName("doc_content")[0];
+    var result_content = document.getElementsByClassName("search_result_container")[0];
+    window.__gcse || (window.__gcse = {});
+    window.__gcse.searchCallbacks = {
+      web: {
+        starting: function () {
+        },
+        ready: function () {
+          doc_content.classList.add("hide");
+          result_content.classList.remove("hide");
+        },
+        rendered: function () {
+        },
+      },
+    };
+    function displayConxt() {
+      doc_content.classList.remove("hide");
+      result_content.classList.add("hide");
+    }
   </script>
 </body>
