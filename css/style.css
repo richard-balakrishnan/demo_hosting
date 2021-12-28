@@ -232,12 +232,12 @@ a{
 /* NavBar side toggle css */
 
 @media(max-width:1199px){
-    body .container nav .container-fluid .navbar-collapse ul li a{
+  .navbar-light .navbar-nav .nav-link{
         color: #ffffff;
         border-bottom: 3px solid rgb(58, 74, 106);
         padding: 10px 0 10px 8px;
     }    
-    body .container nav .container-fluid .navbar-collapse ul li a:hover{
+    .navbar-light .navbar-nav .nav-link:hover{
         color: #ffffff;
     }
     .navbar .navbar-collapse.collapsing{ 
@@ -260,7 +260,7 @@ a{
       /* Optional styling */
       background:#283a5e;
       padding:0;
-      top: 80px;
+      top: 72px;
     }
     .navbar .lateral-left.open,
     .navbar .lateral-right.open{
@@ -289,10 +289,6 @@ a{
 
   /* Main Content */
 
-  .main_container{
-
-  }
-
   .card-body{
     min-height: 250px;
     border-color: #EAEAEA;
@@ -315,11 +311,9 @@ a{
 
   /* footer */
 
-  .footer_content{
-  }
-
   .list-group-item{
     border: 0;
+    color: #283a5e;
   }
 
   .brand_color{
