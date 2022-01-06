@@ -437,6 +437,11 @@ html, body{
         cursor: pointer;
       }
 
+      .brand-color{
+        color: #ff4801;
+        display: inline;
+      }
+
 @font-face {
     font-family: "doc-icons";
     src: url(dd16b75d301eadc925d7b0a611207eec.eot);
