@@ -197,7 +197,7 @@ form.gsc-search-box{
 }
 
 .gsib_a{
-  padding: 10px !important;
+  padding: 8px !important;
   border: none !important;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, .06);
 }
@@ -222,7 +222,7 @@ form.gsc-search-box{
 }
 
 .gsc-search-button-v2{
-  padding: 19px !important;
+  padding: 17px !important;
   border-radius: 0px !important;
 }
 
@@ -499,3 +499,10 @@ html, body{
     font-weight: normal;
     font-style: normal;
   }
+
+.brand_display_color{
+  color: #ff4801;
+}
+.brand_display_color:hover{
+  color: #ad3224;
+}
